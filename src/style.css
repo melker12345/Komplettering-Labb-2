@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --font-sora: "Sora", sans-serif;
+    --font-code: "Source Code Pro", monospace;
+    --font-grotesk: "Space Grotesk", sans-serif;
+    color-scheme: dark;
+}
+
+* {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+:root {
+    --color-text-light: #000;
+    --color-bg-light: #fff;
+    --color-text-dark: #fff;
+    --color-bg-dark: #121212;
+}
+
+/* Base styles that are common to both themes */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Other base styles */
+}
+
+/* Light theme styles */
+.light-theme {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #0000ee;
+    --link-hover-color: #0000cc;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #cccccc;
+    --link-color: #eeeeff;
+    --link-hover-color: #ddddff;
+}
+
+/* Applying theme variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
