@@ -1,29 +1,20 @@
 <template>
-  <button :class="buttonClass" @click="toggleTheme">
-    <slot></slot>
-  </button>
+  <button @click="toggleTheme" class="font-bold py-2 px-4 rounded text-surface dark:text-base transform transition hover:scale-105 duration-200 ease-in-out">Toggle Theme</button>
 </template>
 
 <script>
-import { computed } from 'vue';
-import { useDarkModeStore } from '../stores/DarkModeStore'; // Adjust the path as needed
+import { useThemeStore } from '../stores/ThemeStore';
 
 export default {
-  name: 'DarkModeToggle',
   setup() {
-    const darkModeStore = useDarkModeStore();
-
-    const buttonClass = computed(() => {
-        return ` text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out
-        `;
-    });
-
+    const themeStore = useThemeStore();
+    
     const toggleTheme = () => {
-      darkModeStore.toggleTheme();
-      document.body.className = darkModeStore.themeClass; // Applying the theme class
+      console.log('Toggling theme', themeStore.darkMode);
+      themeStore.toggleDarkMode();
     };
 
-    return { toggleTheme, buttonClass };
+    return { toggleTheme };
   },
 };
 </script>
