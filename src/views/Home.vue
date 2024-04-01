@@ -71,24 +71,31 @@
 
   <!-- Contact Form Section -->
   <section class="py-12">
-    <div class="container mx-auto max-w-md bg-primary dark:bg-secondary rounded-xl shadow-lg p-6">
+    <div
+      class="container flex flex-col mx-auto max-w-md bg-primary dark:bg-dark-primary dark:text-dark-secondary rounded-xl shadow-lg p-6">
       <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
       <form>
         <div class="mb-4">
           <label for="name" class="block mb-2">Name</label>
-          <input type="text" id="name" class="w-full p-2 rounded-md">
+          <input type="text" id="name"
+            class="my-2 mx-1 p-2 justify-center w-[95%] rounded-md shadow-sm bg-white dark:bg-black dark:bg-opacity-50">
         </div>
         <div class="mb-4">
           <label for="email" class="block mb-2">Email</label>
-          <input type="email" id="email" class="w-full p-2 rounded-md">
+          <input type="email" id="email"
+            class="my-2 mx-1 p-2 justify-center w-[95%] rounded-md shadow-sm bg-white dark:bg-black dark:bg-opacity-50">
         </div>
         <div class="mb-4">
           <label for="message" class="block mb-2">Message</label>
-          <textarea id="message" rows="4" class="w-full p-2 rounded-md"></textarea>
+          <textarea id="message" rows="4"
+            class="my-2 mx-1 p-2 justify-center w-[95%] rounded-md shadow-sm bg-white dark:bg-black dark:bg-opacity-50"></textarea>
         </div>
-        <button type="submit" class="w-full bg-secondary dark:bg-primary p-2 rounded-md">
-          Submit
-        </button>
+        <div class="w-full flex justify-center">
+          <button type="submit"
+            class="justify-center  bg-accent1 hover:bg-accent2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   </section>

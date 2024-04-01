@@ -1,29 +1,30 @@
 BUGS:
-- The blogs are not being displayed on the page if at url localhost:3000/blogs and reload the page [FIXED]
 
 
 TODO:
 
-Login:
-- Allow the user to log in and log out
-    - One button that renders Login if the user is signed in and Logged out
-- If the user is logged in, the user should be able to 
-    - Create a new blog post
-    - Delete an existing blog post 
-    - See likes 
+Login: 
+    - Allow the user to log in and log out. [DONE]
+        - One button that renders Login if the user is signed in and Logged out.
+    
+    - If the user is logged in, the user should be able to.
+        - Create a new blog post, maybe an md editor page?
+        - Delete an existing blog post.
+        - See likes.
 
-If user is signed in
-- Create a blog
-- Edit a blog
-- Delete a blog
-- see likes
+
+View blogs:
+
+    Each blog routs the user to the url :to="`/blogs/${blog.id}`.
+    That page should display the full blog nicely.
+    Every blog specific page should follow the same structure.
 
 
 
 
 Maybe:
 
-- Allow logged in users to modify blogs 
+- Allow logged in users to modify blogs.
 - Markdown editor? how ward is it to implement? 
 
 
