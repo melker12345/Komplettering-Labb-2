@@ -1,25 +1,21 @@
-// src/stores/authStore.js
 import { defineStore } from 'pinia';
 
 export const useAuthStore = defineStore('auth', {
-  // State: holds the store's state
   state: () => ({
-    user: null, // Initially, no user is logged in
+    isAuthenticated: false,
   }),
-
-  // Actions: methods to mutate the state
   actions: {
-    // Simulate a login action
-    login(email, password) {
-      // Here you would typically make an API call to authenticate the user
-      // For demonstration, we'll simulate successful login with a static user object
-      this.user = { email };
-      // TODO: Replace with actual authentication logic
+    login(username, password) {
+      if (username === 'John' && password === '123') {
+        this.isAuthenticated = true;
+        console.log('User logged in successfully');
+      } else {
+        alert('Incorrect username or password');
+      }
     },
-
-    // Log out the user by resetting the user state
     logout() {
-      this.user = null;
+      this.isAuthenticated = false;
+      console.log('User logged out');
     },
   },
 });

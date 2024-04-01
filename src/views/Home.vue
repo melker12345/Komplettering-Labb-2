@@ -1,7 +1,7 @@
 <template>
   <section class="h-[60vh] flex flex-col items-center pt-12 md:pt-48 mt-10 md:mt-40" id="hero">
     <div class="container mx-auto text-center">
-      <h1 class="text-3xl md:text-5xl font-bold p-2 text-primary dark:text-primary ">
+      <h1 class="text-3xl md:text-5xl font-bold p-2 text-accent1 dark:text-dark-accent2 ">
         Welcome to How Shit Works 🔥
       </h1>
     </div>
@@ -96,7 +96,7 @@
 
 <script>
 import { ref } from 'vue';
-import { useAuthStore } from '../stores/AuthStore';
+import { useAuthStore } from '../stores/authStore';
 
 export default {
   name: 'HomePage',

@@ -12,9 +12,9 @@ module.exports = {
     extend: {
       colors: {
         primary: "#f1f1f1", // Previously darkColor 1
-        secondary : "#121212", // Previously darkColor 2
-        accent1: "#393E46", // Previously darkColor 3
-        accent2: "#00ADB5", // Previously darkColor 4
+        secondary: "#121212", // Previously darkColor 2
+        accent1: "#05b2fc", // Previously darkColor 3
+        accent2: "#00f3ff", // Previously darkColor 4
         muted: "#EEEEEE", // Previously darkColor 5
 
         dark: {
