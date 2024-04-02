@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-primary dark:bg-secondary border-t dark:border-accent2 mt-24">
+    <section class="bg-primary dark:bg-secondary border-t dark:border-accent2">
         <div class="pt-24 pb-12 border-b border-gray-800">
             <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between flex-wrap gap-8">

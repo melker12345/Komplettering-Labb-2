@@ -4,7 +4,7 @@
     </div>
     <div >
         <div
-            class="container mx-auto p-12 min-h-fit  w-fit my-40 bg-primary text-secondary dark:bg-secondary dark:text-primary rounded-xl ">
+            class="container mx-auto p-12 min-h-fit w-fit my-40 bg-primary text-secondary dark:bg-secondary dark:text-primary rounded-xl ">
             <h1 class="text-4xl font-bold mb-4">About Us</h1>
             <p class="text-lg font-semibold mb-4">Welcome to our website! We are a team of passionate individuals
                 dedicated to

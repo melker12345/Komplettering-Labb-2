@@ -1,6 +1,7 @@
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Blogs from "../views/Blogs.vue";
+import CreateBlog from "../views/CreateBlog.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 import BlogDetail from "../views/BlogDetail.vue";
@@ -33,6 +34,11 @@ const router = createRouter({
       path: "/blogs/:id",
       component: BlogDetail,
       props: true,
+    },
+    {
+      path: "/create",
+      component: CreateBlog,
+      name: "CreateBlog",
     },
   ],
 });

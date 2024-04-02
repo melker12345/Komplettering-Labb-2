@@ -1,21 +1,19 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-export const useAuthStore = defineStore('auth', {
+export const useAuthStore = defineStore("auth", {
   state: () => ({
     isAuthenticated: false,
   }),
   actions: {
     login(username, password) {
-      if (username === 'John' && password === '123') {
+      if (username === "John" && password === "123") {
         this.isAuthenticated = true;
-        console.log('User logged in successfully');
       } else {
-        alert('Incorrect username or password');
+        throw new Error("Invalid credentials");
       }
     },
     logout() {
       this.isAuthenticated = false;
-      console.log('User logged out');
     },
   },
 });

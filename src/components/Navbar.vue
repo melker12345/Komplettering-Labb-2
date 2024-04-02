@@ -21,12 +21,8 @@
 
                 <button @click="toggleTheme"
                     class="font-bold text-2xl dark:text-2xl py-2 px-4 rounded text-surface transform transition hover:scale-105 duration-200 ease-in-out">◑</button>
-                <button @click="toggleLoginModal" v-if="!authStore.isAuthenticated"
-                    class="font-bold py-2 px-4 rounded text-surface dark:text-base transform transition hover:scale-105 duration-200 ease-in-out">Log
-                    In</button>
-                <button @click="authStore.logout" v-else
-                    class="font-bold py-2 px-4 rounded text-surface dark:text-base transform transition hover:scale-105 duration-200 ease-in-out">Log
-                    Out</button>
+                <button v-if="!authStore.isAuthenticated" @click="isModalVisible = true">Log In</button>
+                <button v-else @click="authStore.logout">Log Out</button>
             </div>
         </div>
     </nav>
