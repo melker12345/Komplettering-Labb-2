@@ -14,8 +14,8 @@
                             class="text-surface dark:text-base font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105  duration-200 ease-in-out">Home</router-link>
                         <router-link to="/about"
                             class="text-surface dark:text-base font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-200 ease-in-out">About</router-link>
-                        <router-link to="/blogs"
-                            class="text-surface dark:text-base font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-200 ease-in-out">Blogs</router-link>
+                        <router-link to="/articles"
+                            class="text-surface dark:text-base font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-200 ease-in-out">articles</router-link>
                     </div>
                 </div>
 
@@ -37,60 +37,50 @@
 import { useThemeStore } from '../stores/ThemeStore';
 import Button from './Button.vue';
 
-import { ref } from 'vue';
-import { useAuthStore } from '../stores/authStore';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useAuthStore } from '../stores/AuthStore';
 import LoginModal from './LoginModal.vue';
-
-const isModalVisible = ref(false);
-
-const toggleModal = () => {
-    isModalVisible.value = !isModalVisible.value;
-};
-
 
 export default {
     name: 'Navbar',
     components: { LoginModal },
-    data() {
-        return {
-            showNavbar: true,
-            lastScrollPosition: 0,
-        };
-    },
-    mounted() {
-        window.addEventListener('scroll', this.handleScroll);
-    },
     setup() {
         const themeStore = useThemeStore();
+        const authStore = useAuthStore();
+
+        const showNavbar = ref(true);
+        const lastScrollPosition = ref(0);
+        const isModalVisible = ref(false);
 
         const toggleTheme = () => {
             console.log('Toggling theme', themeStore.darkMode);
             themeStore.toggleDarkMode();
         };
 
-        const isModalVisible = ref(false);
-        const authStore = useAuthStore();
-
         const toggleLoginModal = () => {
             isModalVisible.value = !isModalVisible.value;
         };
 
-        return { isModalVisible, toggleLoginModal, authStore, toggleTheme };
-    },
-    beforeUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
-    methods: {
-        handleScroll() {
+        const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-            if (currentScrollPosition < this.lastScrollPosition) {
-                this.showNavbar = true;
+            if (currentScrollPosition < lastScrollPosition.value) {
+                showNavbar.value = true;
             } else if (currentScrollPosition > 100) {
-                this.showNavbar = false;
+                showNavbar.value = false;
             }
-            this.lastScrollPosition = currentScrollPosition;
-        },
+            lastScrollPosition.value = currentScrollPosition;
+        };
+
+        onMounted(() => {
+            window.addEventListener('scroll', handleScroll);
+        });
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('scroll', handleScroll);
+        });
+
+        return { showNavbar, isModalVisible, toggleLoginModal, authStore, toggleTheme };
     },
 };
 </script>

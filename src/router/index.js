@@ -1,14 +1,14 @@
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
-import Blogs from "../views/Blogs.vue";
-import CreateBlog from "../views/CreateBlog.vue";
+import Articles from "../views/Article.vue";
+import CreateArticle from "../views/CreateArticle.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
-import BlogDetail from "../views/BlogDetail.vue";
+import ArticleDetail from "../views/ArticleDetail.vue";
 
 const routes = [
-  { path: "/blogs", component: Blogs },
-  { path: "/blogs/:id", component: BlogDetail, props: true },
+  { path: "/articles", component: Articles },
+  { path: "/articles/:id", component: ArticleDetail, props: true },
 ];
 
 const router = createRouter({
@@ -26,19 +26,19 @@ const router = createRouter({
       component: About,
     },
     {
-      path: "/blogs",
-      name: "Blogs",
-      component: Blogs,
+      path: "/articles",
+      name: "Articles",
+      component: Articles,
     },
     {
-      path: "/blogs/:id",
-      component: BlogDetail,
+      path: "/articles/:id",
+      component: ArticleDetail,
       props: true,
     },
     {
       path: "/create",
-      component: CreateBlog,
-      name: "CreateBlog",
+      component: CreateArticle,
+      name: "CreateArticle",
     },
   ],
 });

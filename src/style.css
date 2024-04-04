@@ -20,3 +20,92 @@
 #app {
     @apply flex flex-col min-h-screen w-full;
 }
+
+#markdown-editor h1 {
+    @apply text-4xl font-bold mt-2 mb-4;
+}
+
+#markdown-editor h2 {
+    @apply text-3xl font-semibold mt-2 mb-3;
+}
+
+#markdown-editor h3 {
+    @apply text-2xl font-medium mt-2 mb-2;
+}
+#markdown-editor h4 {
+    @apply text-xl font-medium mt-2 mb-2;
+}
+#markdown-editor h5 {
+    @apply text-lg font-medium mt-2 mb-2;
+}
+#markdown-editor h6 {
+    @apply text-sm font-medium mt-2 mb-2;
+}
+
+#markdown-editor p {
+    @apply text-base mb-4;
+}
+
+#markdown-editor a {
+    @apply text-blue-500 ;
+}
+
+#markdown-editor img {
+    @apply max-w-full h-auto rounded;
+}
+
+#markdown-editor blockquote {
+    @apply border-l-4 border-gray-400 pl-4 italic;
+}
+
+#markdown-editor code {
+    @apply bg-gray-200 rounded-md p-1;
+}
+
+#markdown-editor pre {
+    @apply bg-gray-100 p-4 rounded overflow-x-auto;
+}
+
+#markdown-editor ul,
+#markdown-editor ol {
+    @apply list-inside list-disc pl-4 mb-4;
+}
+
+#markdown-editor ul {
+    @apply list-disc;
+}
+
+#markdown-editor ol {
+    @apply list-decimal;
+}
+
+#markdown-editor hr {
+    @apply my-4 border-t border-gray-400;
+}
+#markdown-editor strong {
+    @apply font-semibold;
+}
+
+#markdown-editor em {
+    @apply italic;
+}
+
+#markdown-editor del {
+    @apply line-through;
+}
+
+#markdown-editor table {
+    @apply border-collapse;
+}
+
+#markdown-editor th {
+    @apply font-semibold text-left p-2 border border-gray-300;
+}
+
+#markdown-editor td {
+    @apply p-2 border border-gray-300;
+}
+
+#markdown-editor hr {
+    @apply my-4 border-t border-gray-400;
+}

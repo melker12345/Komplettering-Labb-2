@@ -1,10 +1,11 @@
 <template>
-    <div v-if="isVisible" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
+    <div v-if="isVisible" class="fixed inset-0 z-50 bg-gray-600 bg-opacity-50 flex justify-center items-center">
         <div
             class="bg-white dark:bg-dark-primary dark:text-dark-secondary rounded-lg shadow-xl p-8 max-w-sm mx-auto my-auto ">
             <div class="flex justify-between items-center mb-4 ">
                 <h2 class="text-xl font-bold">Login</h2>
-                <button @click="$emit('close')" class="text-secondary dark:text-dark-secondary text-2xl">&times;</button>
+                <button @click="$emit('close')"
+                    class="text-secondary dark:text-dark-secondary text-2xl">&times;</button>
             </div>
             <form @submit.prevent="handleLogin" class="space-y-6 w-72">
                 <div>
@@ -31,10 +32,15 @@
 
 <script>
 import { ref } from 'vue';
-import { useAuthStore } from '../stores/authStore';
+import { useAuthStore } from '../stores/AuthStore';
 
 export default {
-    props: ['isVisible'],
+    props: {
+        isVisible: {
+          type: Boolean,
+          required: true,
+        },
+    },
     emits: ['close'],
     setup(props, { emit }) {
         const username = ref('');

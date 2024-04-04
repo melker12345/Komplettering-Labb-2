@@ -2,12 +2,12 @@
   <section class="h-[60vh] flex flex-col items-center pt-12 md:pt-48 mt-10 md:mt-40" id="hero">
     <div class="container mx-auto text-center">
       <h1 class="text-3xl md:text-5xl font-bold p-2 text-accent1 dark:text-dark-accent2 ">
-        Welcome to How Shit Works 🔥
+        Lorem ipsum dolor sit amet consectetur accusantium!
       </h1>
     </div>
   </section>
 
-  <!-- Blog Posts Section -->
+  <!-- article Posts Section -->
   <section class="py-12">
     <div class="flex flex-wrap justify-center gap-8 md:gap-20 lg:gap-40">
       <!-- Cards -->
@@ -15,7 +15,7 @@
         <!-- Card 1 -->
         <div
           class="rounded-2xl shadow-sm w-full lg:w-[500px] max-w-[500px] flex flex-col justify-between p-10 bg-primary text-secondary dark:bg-secondary dark:text-primary mb-20">
-          <h3 class="text-3xl font-bold mb-4">What's NeoVim</h3>
+          <h3 class="text-3xl font-bold mb-4">Lorem ipsum</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quas, architecto fugit eum
             necessitatibus fuga voluptatibus, similique omnis minus aut voluptatem, officiis quia nobis modi dolores
             commodi laboriosam aspernatur velit? Magnam asperiores perspiciatis fugiat dolorem libero ex cum quisquam
@@ -28,7 +28,7 @@
         <!-- Card 2 -->
         <div
           class="rounded-2xl shadow-sm w-full lg:w-[500px] max-w-[500px] flex flex-col justify-between p-10 bg-primary text-secondary dark:bg-secondary dark:text-primary mb-20">
-          <h3 class="text-3xl font-bold mb-4">What's NeoVim</h3>
+          <h3 class="text-3xl font-bold mb-4">Lorem ipsum</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quas, architecto fugit eum
             necessitatibus fuga voluptatibus, similique omnis minus aut voluptatem, officiis quia nobis modi dolores
             commodi laboriosam aspernatur velit? Magnam asperiores perspiciatis fugiat dolorem libero ex cum quisquam
@@ -44,7 +44,7 @@
         <!-- Card 3 -->
         <div
           class="rounded-2xl shadow-sm w-full lg:w-[500px] max-w-[500px] flex flex-col justify-between p-10 bg-primary text-secondary dark:bg-secondary dark:text-primary mb-20">
-          <h3 class="text-3xl font-bold mb-4">What's NeoVim</h3>
+          <h3 class="text-3xl font-bold mb-4">Lorem ipsum</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quas, architecto fugit eum
             necessitatibus fuga voluptatibus, similique omnis minus aut voluptatem, officiis quia nobis modi dolores
             commodi laboriosam aspernatur velit? Magnam asperiores perspiciatis fugiat dolorem libero ex cum quisquam
@@ -56,7 +56,7 @@
         <!-- Card 4 -->
         <div
           class="rounded-2xl shadow-sm w-full lg:w-[500px] max-w-[500px] flex flex-col justify-between p-10 bg-primary text-secondary dark:bg-secondary dark:text-primary mb-20">
-          <h3 class="text-3xl font-bold mb-4">What's NeoVim</h3>
+          <h3 class="text-3xl font-bold mb-4">Lorem ipsum</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quas, architecto fugit eum
             necessitatibus fuga voluptatibus, similique omnis minus aut voluptatem, officiis quia nobis modi dolores
             commodi laboriosam aspernatur velit? Magnam asperiores perspiciatis fugiat dolorem libero ex cum quisquam
@@ -70,25 +70,26 @@
   </section>
 
   <!-- Contact Form Section -->
-  <section class="py-12">
+  <section class="py-12 my-24 ">
     <div
-      class="container flex flex-col mx-auto max-w-md bg-primary dark:bg-dark-primary dark:text-dark-secondary rounded-xl shadow-lg p-6">
-      <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+      class="container flex flex-col w-3/5 min-w-[400px] mx-auto rounded-xl shadow-lg p-6  bg-primary dark:bg-dark-primary dark:text-dark-secondary">
+      <h2 class="text-3xl font-semibold text-center my-10 pb-10 border-b border-accent1 border-opacity-30">Contact Us
+      </h2>
       <form>
         <div class="mb-4">
-          <label for="name" class="block mb-2">Name</label>
+          <label for="name" class="block mb-2 mx-1">Name:</label>
           <input type="text" id="name"
             class="my-2 mx-1 p-2 justify-center w-[95%] rounded-md shadow-sm bg-white dark:bg-black dark:bg-opacity-50">
         </div>
         <div class="mb-4">
-          <label for="email" class="block mb-2">Email</label>
+          <label for="email" class="block mb-2 mx-1">Email:</label>
           <input type="email" id="email"
             class="my-2 mx-1 p-2 justify-center w-[95%] rounded-md shadow-sm bg-white dark:bg-black dark:bg-opacity-50">
         </div>
         <div class="mb-4">
-          <label for="message" class="block mb-2">Message</label>
+          <label for="message" class="block mb-2 mx-1 font-normal text-xl">Message:</label>
           <textarea id="message" rows="4"
-            class="my-2 mx-1 p-2 justify-center w-[95%] rounded-md shadow-sm bg-white dark:bg-black dark:bg-opacity-50"></textarea>
+            class="my-2 mx-1 p-2 justify-center h-48 w-[95%] resize-none rounded-md shadow-sm bg-white dark:bg-black dark:bg-opacity-50"></textarea>
         </div>
         <div class="w-full flex justify-center">
           <button type="submit"
@@ -103,7 +104,7 @@
 
 <script>
 import { ref } from 'vue';
-import { useAuthStore } from '../stores/authStore';
+import { useAuthStore } from '../stores/AuthStore';
 
 export default {
   name: 'HomePage',
@@ -131,3 +132,4 @@ export default {
 <style>
 /* Add any additional styles here */
 </style>
+../stores/AuthStore
