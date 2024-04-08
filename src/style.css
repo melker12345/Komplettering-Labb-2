@@ -2,24 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --font-sora: "Sora", sans-serif;
-    --font-code: "Source Code Pro", monospace;
-    --font-grotesk: "Space Grotesk", sans-serif;
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #5cb2fc #f1f1f1;
+  
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #5cb2fc;
+    border-radius: 10px;
+    border: 3px none #f1f1f1;
 }
 
 * {
-    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
-    transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
     overflow-x: hidden;
 }
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply bg-backgroundImage dark:bg-darkBackgroundImage
+}
+
+#button-color{
+    @apply bg-dark-primary dark:bg-dark-accent2 text-white
+}
 
 #app {
     @apply flex flex-col min-h-screen w-full;
 }
+
+#main-color {
+    @apply bg-primary text-secondary dark:bg-dark-primary dark:text-dark-secondary
+}
+
+#secondary-color {
+    @apply bg-secondary text-primary dark:bg-dark-secondary dark:text-dark-primary
+}
+
+#animation {
+    @apply transition-transform transform
+}
+
 
 #markdown-editor h1 {
     @apply text-4xl font-bold mt-2 mb-4;
@@ -32,12 +69,15 @@
 #markdown-editor h3 {
     @apply text-2xl font-medium mt-2 mb-2;
 }
+
 #markdown-editor h4 {
     @apply text-xl font-medium mt-2 mb-2;
 }
+
 #markdown-editor h5 {
     @apply text-lg font-medium mt-2 mb-2;
 }
+
 #markdown-editor h6 {
     @apply text-sm font-medium mt-2 mb-2;
 }
@@ -47,7 +87,7 @@
 }
 
 #markdown-editor a {
-    @apply text-blue-500 ;
+    @apply text-blue-500;
 }
 
 #markdown-editor img {
@@ -59,16 +99,16 @@
 }
 
 #markdown-editor code {
-    @apply bg-gray-200 rounded-md p-1;
+    @apply rounded-md p-1 bg-gray-200 dark:bg-black;
 }
 
 #markdown-editor pre {
-    @apply bg-gray-100 p-4 rounded overflow-x-auto;
+    @apply bg-gray-100 dark:bg-black p-4 rounded overflow-x-auto;
 }
 
 #markdown-editor ul,
 #markdown-editor ol {
-    @apply list-inside list-disc pl-4 mb-4;
+    @apply list-inside pl-4 mb-4;
 }
 
 #markdown-editor ul {
@@ -82,6 +122,7 @@
 #markdown-editor hr {
     @apply my-4 border-t border-gray-400;
 }
+
 #markdown-editor strong {
     @apply font-semibold;
 }

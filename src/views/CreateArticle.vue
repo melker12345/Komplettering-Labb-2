@@ -41,13 +41,13 @@ TODO:
         </div>
 
         <div class="grid grid-cols-2 gap-4 w-full m-4 p-16  ">
-            <div class="rounded-md p-8 bg-primary dark:bg-dark-primary">
+            <div class="rounded-md p-8" id="main-color">
                 <textarea v-model="markdownInput"
                     :placeholder="'# h1\n## h2\n**bold**\n*italic*\n- list\n[link](https://example.com)'"
                     class="p-4 h-[70vh] w-full overflow-auto resize-none border border-accent2 dark:bg-black dark:text-dark-secondary "></textarea>
             </div>
 
-            <div class="p-8 rounded-md bg-primary dark:bg-dark-primary">
+            <div class="p-8 rounded-md" id="main-color">
                 <div v-html="sanitizedHtml"
                     class=" p-4 h-[70vh] w-full overflow-auto border border-accent2 bg-white dark:bg-black dark:text-dark-secondary"
                     id="markdown-editor"></div>
@@ -68,9 +68,9 @@ TODO:
 
 <script>
 import { ref, computed } from 'vue';
-import { marked } from 'marked';
-import SubmitArticleModal from '../components/SubmitArticleModal.vue';
 import { useArticleStore } from '../stores/ArticleStore';
+import SubmitArticleModal from '../components/SubmitArticleModal.vue';
+import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 
 
@@ -89,7 +89,7 @@ export default {
 
         marked.setOptions({
             renderer,
-            breaks: true, // Add line breaks
+            breaks: true, // Enable GFM line breaks
         });
 
         const sanitizedHtml = computed(() => {

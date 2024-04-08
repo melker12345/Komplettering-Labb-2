@@ -1,10 +1,7 @@
 <template>
-    <!-- <div class="text-center flex items-center justify-center pt-[65px] h-52">
-        <h1 class="text-4xl font-bold text-secondary dark:text-dark-secondary ">About</h1>
-    </div> -->
     <div>
         <div
-            class="container mx-auto p-12 min-h-fit w-1/3 my-40 bg-primary text-secondary dark:bg-secondary dark:text-primary rounded-xl ">
+            class="container mx-auto p-12 min-h-fit w-1/3 my-40 rounded-xl " id="main-color">
             <h1 class="text-4xl font-bold mb-10 pb-8 text-center border-b border-accent1 border-opacity-30">About Us
             </h1>
             <p class="text-lg font-semibold mb-4">Welcome to our website! We are a team of passionate individuals

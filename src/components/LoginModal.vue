@@ -20,11 +20,16 @@
                         class="my-2 mx-1 p-2 justify-center w-[95%] rounded-md shadow-sm bg-primary dark:bg-black dark:bg-opacity-50 "
                         placeholder="Password">
                 </div>
-                <div class="flex justify-center">
-                    <button type="submit"
-                        class="bg-accent1 hover:bg-accent2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Log
-                        In</button>
+
+                <div v-if="showError" class="text-red-500 my-2 font-semibold text-center">
+                    Please fill in both the title
+                    and summary fields.
                 </div>
+
+                <div class="flex justify-center">
+                    <button type="submit" class="bg-accent1 hover:bg-accent2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Log In</button>
+                </div>
+
             </form>
         </div>
     </div>
@@ -46,15 +51,22 @@ export default {
         const username = ref('');
         const password = ref('');
         const authStore = useAuthStore();
+        const showError = ref(false);
+
 
         const handleLogin = () => {
+            if (password.value.trim() === '' || username.value.trim() === '') {
+                showError.value = true;
+                return;
+            }
             authStore.login(username.value, password.value);
             if (authStore.isAuthenticated) {
                 emit('close');
             }
+            showError.value = false;
         };
 
-        return { username, password, handleLogin };
+        return { username, password, handleLogin, showError };
     },
 };
 </script>

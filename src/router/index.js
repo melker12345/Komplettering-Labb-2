@@ -6,15 +6,11 @@ import CreateArticle from "../views/CreateArticle.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import ArticleDetail from "../views/ArticleDetail.vue";
 
-const routes = [
-  { path: "/articles", component: Articles },
-  { path: "/articles/:id", component: ArticleDetail, props: true },
-];
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    routes,
     {
       path: "/",
       name: "Home",
@@ -32,6 +28,11 @@ const router = createRouter({
     },
     {
       path: "/articles/:id",
+      component: ArticleDetail,
+      props: true,
+    },
+    {
+      path: "/user-created-articles/:id",
       component: ArticleDetail,
       props: true,
     },
