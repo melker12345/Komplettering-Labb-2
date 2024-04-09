@@ -27,12 +27,12 @@ const router = createRouter({
       component: Articles,
     },
     {
-      path: "/articles/:id",
+      path: "/articles/:title",
       component: ArticleDetail,
       props: true,
     },
     {
-      path: "/user-created-articles/:id",
+      path: "/user-created-articles/:title",
       component: ArticleDetail,
       props: true,
     },

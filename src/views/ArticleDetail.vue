@@ -24,13 +24,16 @@ export default {
         const route = useRoute();
         const articlesStore = useArticleStore();
         const renderer = new marked.Renderer();
+        let x = JSON.parse(localStorage.getItem('userCreatedArticles'));
+        
+        console.log(x);
 
         const article = computed(() => {
-            const id = parseInt(route.params.id, 10);
+            const title = route.params.title;
             if (route.path.startsWith('/articles/')) {
-                return articlesStore.articles.find(b => b.id === id);
+                return articlesStore.articles.find(b => b.title === title);
             } else if (route.path.startsWith('/user-created-articles/')) {
-                return articlesStore.userCreatedArticles.find(b => b.id === id);
+                return x.find(b => b.title === title);
             }
             return null; 
         });

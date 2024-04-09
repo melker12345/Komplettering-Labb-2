@@ -6,7 +6,7 @@ IGNORE # H1\n\n---\n\n*Italic*\n**Bold**\n\n![img](https://pbs.twimg.com/media/G
 
 i want to check if userCreatedArticles in local storage is empty or not once this store is created
 if it is not empty i want to keep that data in the stores userCreatedArticles list 
-so on creation we look to see if there is any data in local storage and if there is we add it to the store
+so on creation I look to see if there is any data in local storage and if there is add it to the store
 
 // does the articles in local storage get added to the userCreatedArticles list on creation of this store?
 */
@@ -15,21 +15,20 @@ so on creation we look to see if there is any data in local storage and if there
 export const useArticleStore = defineStore('articles', {
   state: () => ({
     articles: [],
-    // should be an array of articles created by the user it should contain as many articles as the user has created
     userCreatedArticles: [],
   }),
   actions: {
-    // This should append the new article to the existing list of articles so that it is not overwritten when the page is refreshed or when a new article is created
-    addUserCreatedArticles(article) {
-      this.userCreatedArticles = [...this.userCreatedArticles, article];
-      localStorage.setItem('userCreatedArticles', JSON.stringify(this.userCreatedArticles));
-      console.log('userCreatedArticles updated:', this.userCreatedArticles);
+    addUserCreatedArticles(fullArticle) {
+      let articles = localStorage.getItem('userCreatedArticles');  
+      articles = articles ? JSON.parse(articles) : [];
+      articles.push(fullArticle);
+      localStorage.setItem('userCreatedArticles', JSON.stringify(articles));
     },
+
     async fetcharticles() {
       try {
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
         this.articles = response.data.map(article => ({
-          id: article.id,
           title: article.title.charAt(0).toUpperCase() + article.title.slice(1),
           body: article.body,
           summary: article.body.slice(0, 200),
@@ -39,14 +38,26 @@ export const useArticleStore = defineStore('articles', {
       }
     },
   },
-  // this should load the userCreatedArticles from local storage and populate the stores userCreatedArticles list when the store is created
   created() {
-    const storedUserCreatedArticles = localStorage.getItem('userCreatedArticles');
+    let storedUserCreatedArticles = localStorage.getItem('userCreatedArticles');
     if (storedUserCreatedArticles) {
-      this.userCreatedArticles = JSON.parse(storedUserCreatedArticles);
-      console.log('userCreatedArticles loaded from local storage:', this.userCreatedArticles);
+      storedUserCreatedArticles = JSON.parse(storedUserCreatedArticles);
+      console.log('userCreatedArticles loaded from local storage:', storedUserCreatedArticles);
+      this.userCreatedArticles = storedUserCreatedArticles;
     }
-  },
+  }
 });
 
-console.log(useArticleStore.userCreatedArticles);
+
+/*
+i have a pina store that contains two list one fetched from third party api and the other should be empty if there is nothing in  local storage
+i want to render both of them in the same component
+i correctly route the user to the correct article when they click on the article
+the issue is that when i click on the article from the local storage list it does not render the article
+it renders nothing but when i click on the article from the third party api list it renders the article correctly
+
+problem: when i click on the article from the local storage list it does not render the article
+
+why? maybe the article is not being passed correctly from local storage to the userCreatedArticles list in the store 
+
+*/

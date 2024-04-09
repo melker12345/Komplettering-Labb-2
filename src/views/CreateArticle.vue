@@ -104,7 +104,8 @@ export default {
             const fullArticle = {
                 ...articleDetails,
                 body: markdownInput.value,
-                id: useArticleStore().userCreatedArticles.length + 1
+                
+                
             };
             useArticleStore().addUserCreatedArticles(fullArticle);
             isSubmitArticleModalVisible.value = false;
@@ -113,7 +114,6 @@ export default {
         const toggleSubmitArticleModal = () => {
             isSubmitArticleModalVisible.value = !isSubmitArticleModalVisible.value;
         };
-
         return {
             markdownInput,
             sanitizedHtml,
