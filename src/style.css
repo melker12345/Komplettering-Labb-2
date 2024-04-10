@@ -7,8 +7,7 @@
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #5cb2fc #f1f1f1;
-  
+    scrollbar-color: #5cb2fc #333
 }
 
 /* Chrome, Edge, and Safari */
@@ -26,16 +25,19 @@
     border: 3px none #f1f1f1;
 }
 
+
+/* ===== Custom CSS ===== */
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
+
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     @apply bg-backgroundImage dark:bg-darkBackgroundImage
 }
+
 
 #button-color{
     @apply bg-dark-primary dark:bg-dark-accent2 text-white
@@ -57,6 +59,8 @@ body {
     @apply transition-transform transform
 }
 
+
+/* ===== Markdown ===== */
 
 #markdown-editor h1 {
     @apply text-4xl font-bold mt-2 mb-4;

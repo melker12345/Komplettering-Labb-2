@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            class="container mx-auto p-12 min-h-fit w-1/3 my-40 rounded-xl " id="main-color">
+            class="container mx-auto p-12 min-h-fit w-1/3 my-40 rounded-xl border-t border-b border-accent1 border-opacity-30" id="main-color">
             <h1 class="text-4xl font-bold mb-10 pb-8 text-center border-b border-accent1 border-opacity-30">About Us
             </h1>
             <p class="text-lg font-semibold mb-4">Welcome to our website! We are a team of passionate individuals

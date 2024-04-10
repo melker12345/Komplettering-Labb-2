@@ -1,11 +1,10 @@
 <template>
-    <div class="max-w-4xl mx-auto mt-[65px] p-10 flex justify-center items-center h-fit ">
-        <div v-if="article"
-            class="p-6 shadow-md rounded-lg min-h-fit " id="main-color">
+    <div class="max-w-4xl min-h-[80vh] mx-auto mt-[65px] p-10 flex justify-center items-center h-fit ">
+        <div v-if="article" class="p-10 shadow-md rounded-lg min-h-fit h-2/3 border-t border-b border-accent1 border-opacity-30" id="main-color">
             <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent1 border-opacity-30">{{ article.title }}</h1>
             <div v-html="sanitizedHtml" id="markdown-editor"></div>
         </div>
-        <div v-else class="text-center">
+        <div v-else class="text-center h-52 p-10 rounded-lg flex justify-center items-center font-bold text-3xl" id="main-color">
             <p>Article not found.</p>
         </div>
     </div>
@@ -26,7 +25,7 @@ export default {
         const renderer = new marked.Renderer();
         let x = JSON.parse(localStorage.getItem('userCreatedArticles'));
         
-        console.log(x);
+        console.log("x", x);
 
         const article = computed(() => {
             const title = route.params.title;

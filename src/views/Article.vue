@@ -14,10 +14,10 @@
     <div v-for="article in storedUserCreatedArticles" :key="article.title"
       class="flex flex-col p-6 shadow-md rounded-lg w-full sm:max-w-sm h-96 border-t border-b border-accent1 border-opacity-30" id="main-color">
       <h2 class="text-2xl font-bold mb-5 pb-4 text-center truncate border-b border-accent1 border-opacity-30">
-        {{ article.title }}
+        {{ article.title.charAt(0).toUpperCase() + article.summary.slice(1) }}
       </h2>
-      <p class="flex-1 overflow-hidden text-justify mt-6">
-        {{ article.summary }}
+      <p class="flex-1 overflow-hidden  mt-6">
+        {{ article.summary.charAt(0).toUpperCase() + article.summary.slice(1) }}
       </p>
       <router-link :to="`/user-created-articles/${article.title}`"
         class="mt-auto px-4 py-2 rounded-md mx-auto" id="button-color">
@@ -27,18 +27,18 @@
   </div>
 
   <!-- articles from external api  -->
-  <div class="w-[80vw] mb-8 mx-auto border-b border-accent2"></div>
+  <!-- <div class="w-[80vw] mb-8 mx-auto border-b border-accent2"></div> -->
   <div class="flex flex-wrap justify-center gap-4 my-24">
     <!-- article cards -->
     <div v-for="article in articles" :key="article.title"
       class="flex flex-col p-6 shadow-md rounded-lg w-full sm:max-w-sm h-96 bg-primary dark:bg-dark-primary text-secondary dark:text-dark-secondary border-t border-b border-accent1 border-opacity-30">
       <!-- Title area -->
       <h2 class="text-2xl font-bold mb-5 pb-4 text-center truncate border-b border-accent1 border-opacity-30">
-        {{ article.title }}
+        {{ article.title.charAt(0).toUpperCase() + article.summary.slice(1) }}
       </h2>
       <!-- Summary area -->
-      <p class="flex-1 overflow-hidden text-justify mt-6">
-        {{ article.summary }}
+      <p class="flex-1 overflow-hidden mt-6">
+        {{ article.summary.charAt(0).toUpperCase() + article.summary.slice(1) }}
       </p>
       <!-- Button area -->
       <router-link :to="`/articles/${article.title}`"

@@ -62,7 +62,7 @@
 - Handeling local storage is more complex. Now we have the component, the store and the local storage. 
     best practice is to keep the store as the single source of truth and update the local storage when the store changes.
 
-- v-html directive is used to update the innerHTML of an element
+- v-html directive is used to update the innerHTML of an element    
 
 
 - biggest problem was to renfer the correct article
