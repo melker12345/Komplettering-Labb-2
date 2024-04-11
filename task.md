@@ -66,3 +66,30 @@
 
 
 - biggest problem was to renfer the correct article
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+# Description of the website 
+
+#### This is a Vue 3 application that uses tailwindcss, pinia, marked, dompurify and axios. 
+
+
+This website is built with vue 3, tailwind and pinia. The 'articles' are fetched from a mock API or created by the user. the main fokus of this website is to show how to use pinia and how to use the store to fetch data from an API. whislt also showing how to use tailwind
+
+There are **obviously** many things 'wrong' with this website.  
+
+The first problem is that the articles are not stored in a database.The articles are not persistent for different users. The articles you are seeing is the once being fetced from the mock API or the once you created yourself.
+The articles you see at the top of the /articles page are the once you created yourself. These are stored as a string in the local storage. This is to prevent the articles from being removed by page reload. The articles fetched from the mock API are in this case the most irrelevant which is why they are just stored in the store and loaded below user crated once.
+
+The second problem is that the log in is handled on the front-end. This means that the user is not actually logged in. The user is just pretending loggin. Everyone have access to "Jhon" "123" since it's stored in the auth store on the front-end. The login is just a simple demonstration of how it could be done. For this to be a real site the login should be handled on the backend.
+
+I could possebly integrate some sort third party login service like google or github. but i won't bother since this is just a demo site 

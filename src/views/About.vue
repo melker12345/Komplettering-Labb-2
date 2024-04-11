@@ -1,41 +1,32 @@
 <template>
-    <div>
-        <div
-            class="container mx-auto p-12 min-h-fit w-1/3 my-40 rounded-xl border-t border-b border-accent1 border-opacity-30" id="main-color">
-            <h1 class="text-4xl font-bold mb-10 pb-8 text-center border-b border-accent1 border-opacity-30">About Us
-            </h1>
-            <p class="text-lg font-semibold mb-4">Welcome to our website! We are a team of passionate individuals
-                dedicated to
-                providing
-                high-quality products and services.</p>
-            <p class="text-lg mb-4 font-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                auctor, nunc id
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolor voluptatem et vitae fuga! Quos,
-                ipsa culpa. Voluptas sunt error enim consectetur magni, numquam omnis possimus, similique at autem saepe
-                et est! Repudiandae dolores ullam id veritatis fuga? Saepe voluptates in voluptatibus, doloribus culpa
-                deleniti, inventore quo maxime quidem nemo velit veniam corrupti incidunt! Praesentium voluptas
-                voluptatum voluptatem accusamus perferendis. Quasi esse laudantium assumenda inventore, labore quae
-                soluta ab. Eum exercitationem dolorum voluptas nesciunt optio praesentium, quasi a! Dolores repudiandae
-                iste atque nulla officia incidunt at temporibus culpa illum cum qui dolorem corrupti numquam ipsam id
-                reiciendis doloremque ducimus harum dolor excepturi, nam repellendus veniam vitae nemo. Soluta debitis
-                iusto asperiores illo nobis deserunt tenetur nam consequatur. Nesciunt animi pariatur consequuntur, ex
-                voluptatibus ut est. Architecto veritatis asperiores rerum velit odio similique fuga molestias et
-                laudantium veniam minus, mollitia, quo hic iusto delectus ipsam? Labore eveniet placeat deleniti ex
-                dolores.</p>
-            <p class="text-lg mb-4 font-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                auctor, nunc id
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolor voluptatem et vitae fuga! Quos,
-                ipsa culpa. Voluptas sunt error enim consectetur magni, numquam omnis possimus, similique at autem saepe
-                et est! Repudiandae dolores ullam id veritatis fuga? Saepe voluptates in voluptatibus, doloribus culpa
-                deleniti, inventore quo maxime quidem nemo velit veniam corrupti incidunt! Praesentium voluptas
-                voluptatum voluptatem accusamus perferendis. Quasi esse laudantium assumenda inventore, labore quae
-                soluta ab. Eum exercitationem dolorum voluptas nesciunt optio praesentium, quasi a! Dolores repudiandae
-                iste atque nulla officia incidunt at temporibus culpa illum cum qui dolorem corrupti numquam ipsam id
-                reiciendis doloremque ducimus harum dolor excepturi, nam repellendus veniam vitae nemo. Soluta debitis
-                iusto asperiores illo nobis deserunt tenetur nam consequatur. Nesciunt animi pariatur consequuntur, ex
-                voluptatibus ut est. Architecto veritatis asperiores rerum velit odio similique fuga molestias et
-                laudantium veniam minus, mollitia, quo hic iusto delectus ipsam? Labore eveniet placeat deleniti ex
-                dolores.</p>
+    <div class="max-w-4xl min-h-[80vh] mx-auto  mt-[65px] p-10 flex justify-center items-center h-fit ">
+        <div class="p-10 my-40 shadow-md rounded-lg min-h-fit h-2/3 border-t border-b border-accent1 border-opacity-30"
+            id="main-color">
+            <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent1 border-opacity-30">How this site works</h1>
+            <div>
+                <p>
+                    This website is built with Vue 3, Tailwind, and Pinia. The 'articles' are fetched from a mock API or
+                    created by the user. The main focus of this website is to show how to use Pinia and how to use the
+                    store to fetch data from an API, whilst also showing how to use Tailwind.
+                    <br><br>
+                    There are obviously many things 'wrong' with this website.
+                    <br><br>
+                    The first problem is that the articles are not stored in a database. The articles are not persistent
+                    for different users. The articles you are seeing are the ones being fetched from the mock API or the
+                    ones you created yourself. The articles you see at the top of the /articles page are the ones you
+                    created yourself. These are stored as a string in the local storage. This is to prevent the articles
+                    from being removed by page reload. The articles fetched from the mock API are in this case the most
+                    irrelevant which is why they are just stored in the store and loaded below user-created ones.
+                    <br><br>
+                    The second problem is that the login is handled on the front-end. This means that the user is not
+                    actually logged in. The user is just pretending to log in. Everyone has access to "John" "123" since
+                    it's stored in the auth store on the front-end. The login is just a simple demonstration of how it
+                    could be done. For this to be a real site the login should be handled on the backend.
+                    <br><br>
+                    I could possibly integrate some sort of third-party login service like Google or GitHub, but I won't
+                    bother since this is just a demo site.
+                </p>
+            </div>
         </div>
     </div>
 </template>

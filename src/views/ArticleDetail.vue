@@ -1,6 +1,6 @@
 <template>
-    <div class="max-w-4xl min-h-[80vh] mx-auto mt-[65px] p-10 flex justify-center items-center h-fit ">
-        <div v-if="article" class="p-10 shadow-md rounded-lg min-h-fit h-2/3 border-t border-b border-accent1 border-opacity-30" id="main-color">
+    <div class="max-w-4xl min-h-[80vh] mx-auto  mt-[65px] p-10 flex justify-center items-center h-fit ">
+        <div v-if="article" class="p-10 my-40 shadow-md rounded-lg min-h-fit h-2/3 border-t border-b border-accent1 border-opacity-30" id="main-color">
             <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent1 border-opacity-30">{{ article.title }}</h1>
             <div v-html="sanitizedHtml" id="markdown-editor"></div>
         </div>

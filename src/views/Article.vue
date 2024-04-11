@@ -27,11 +27,10 @@
   </div>
 
   <!-- articles from external api  -->
-  <!-- <div class="w-[80vw] mb-8 mx-auto border-b border-accent2"></div> -->
   <div class="flex flex-wrap justify-center gap-4 my-24">
     <!-- article cards -->
     <div v-for="article in articles" :key="article.title"
-      class="flex flex-col p-6 shadow-md rounded-lg w-full sm:max-w-sm h-96 bg-primary dark:bg-dark-primary text-secondary dark:text-dark-secondary border-t border-b border-accent1 border-opacity-30">
+      class="flex flex-col p-6 shadow-md rounded-lg w-full sm:max-w-sm h-96 border-t border-b border-accent1 border-opacity-30" id="main-color">
       <!-- Title area -->
       <h2 class="text-2xl font-bold mb-5 pb-4 text-center truncate border-b border-accent1 border-opacity-30">
         {{ article.title.charAt(0).toUpperCase() + article.summary.slice(1) }}
@@ -42,7 +41,7 @@
       </p>
       <!-- Button area -->
       <router-link :to="`/articles/${article.title}`"
-        class="mt-auto bg-secondary dark:bg-dark-secondary text-primary dark:text-secondary px-4 py-2 rounded-md mx-auto" id="button-color">
+        class="mt-auto  px-4 py-2 rounded-md mx-auto" id="button-color">
         Read more
       </router-link>
     </div>
