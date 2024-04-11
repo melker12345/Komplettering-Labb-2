@@ -119,7 +119,6 @@ export default {
       console.log('Navigate to create post page');
     };
     return {
-
       createPost,
       user,
       posts,

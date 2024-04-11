@@ -1,32 +1,42 @@
-## BUGS
 
 ## TODO
-- View articles:
-    - Each article routs the user to the url `:to="/articles/${article.id}"`.
-    - That page should display the full article nicely.
-    - Every article specific page should follow the same structure.
+- View articles: [DONE]
+    - Each article routs the user to the url `:to="/articles/${article.id}"`. [DONE]
+    - That page should display the full article nicely. [DONE]
+    - Every article specific page should follow the same structure. [DONE]
 
-- User created articles:
-    - Should be added to the top section of the article view.
+- User created articles: [DONE]
+    - Should be added to the top section of the article view. [DONE]
 
-- Login:
-    - Allow the user to log in and log out.
-    - One button that renders Login if the user is signed in and Logged out.
+- Login: 
+    - Allow the user to log in and log out. [DONE]
+    - One button that renders Login if the user is signed in and Logged out. [DONE]
 
-    - If the user is logged in, the user should be able to:
-        - Create a new article post. Should be a button in the article view.
-            - Once the user has written an article and presses the submit button, the user should be prompted to enter a header and a summary.
-            - The article should be added to the `userCreatedArticles` list in the store.
-            - The header should be `userCreatedArticles.title`.
-            - The summary should be `userCreatedArticles.body`.
-            - The id should be `userCreatedArticles.id`.
-            - To prevent user-created articles from being removed by page reload, let's store it in local storage as well.
+    - If the user is logged in, the user should be able to: [DONE]
+        - Create a new article post. Should be a button in the article view. [DONE]
+            - Once the user has written an article and presses the submit button, the user should be prompted to enter a header and a summary. [DONE]
+            - The article should be added to the `userCreatedArticles` list in the store. [DONE]
+            - The header should be `userCreatedArticles.title`. [DONE]
+            - The summary should be `userCreatedArticles.body`. [DONE]
+            - To prevent user-created articles from being removed by page reload, let's store it in local storage as well. [DONE]
+        
+        
         - Delete an existing article post. These should be buttons in each article card.
 
     - Redirect user to home if the user signs out on the create article page.
 
+
+- Responsive:
+
+- Create article and article header is iverlapping on smaller screens. 
+
+
 - Hamburger menu:
     - Smaller screens should have a hamburger menu with all the nav buttons.
+
+
+
+
 
 ## REFACTOR
 - vue 3:
@@ -66,15 +76,6 @@
 
 
 - biggest problem was to renfer the correct article
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
