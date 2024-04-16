@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <button type="submit" class="bg-accent1 hover:bg-accent2 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                    <button type="submit" class=" font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="button-color">Submit</button>
                 </div>
             </form>
         </div>

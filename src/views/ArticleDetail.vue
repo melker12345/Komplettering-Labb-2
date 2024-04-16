@@ -1,9 +1,8 @@
-<!-- Just ignore the incorrect markdown format at the /user-created-articles/:title :) -->
 
 <template>
-    <div class="max-w-4xl min-h-[80vh] h-fit mx-auto mt-[65px] p-0 sm:p-10 flex justify-center items-center  ">
-        <div v-if="article" class="p-10 my-40 shadow-md rounded-lg min-h-fit h-2/3 border-t border-b border-accent1 border-opacity-30" id="main-color">
-            <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent1 border-opacity-30">{{ article.title }}</h1>
+    <div class="max-w-4xl min-h-[80vh] mx-auto mt-[65px] p-0 sm:p-10 flex justify-center items-center  ">
+        <div v-if="article" class="p-10 my-40 shadow-md rounded-lg min-h-[70vh] min-w-[30vw] border-t border-b border-accent2 border-opacity-30" id="main-color">
+            <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent2 border-opacity-30">{{ article.title }}</h1>
             <div v-html="sanitizedHtml" id="markdown-editor"></div>
         </div>
         <div v-else class="text-center h-52 p-10 rounded-lg flex flex-col justify-center items-center font-bold text-3xl" id="main-color">

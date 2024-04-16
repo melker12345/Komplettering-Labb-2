@@ -1,10 +1,11 @@
+import { createRouter, createWebHistory } from "vue-router";
+
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Articles from "../views/Article.vue";
 import CreateArticle from "../views/CreateArticle.vue";
-
-import { createRouter, createWebHistory } from "vue-router";
 import ArticleDetail from "../views/ArticleDetail.vue";
+import NotFound from "../views/NotFound.vue";
 
 
 
@@ -41,6 +42,11 @@ const router = createRouter({
       component: CreateArticle,
       name: "CreateArticle",
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: NotFound
+    }
   ],
 });
 

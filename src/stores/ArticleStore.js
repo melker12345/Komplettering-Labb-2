@@ -15,7 +15,6 @@ so on creation I look to see if there is any data in local storage and if there 
 export const useArticleStore = defineStore('articles', {
   state: () => ({
     articles: [],
-    userCreatedArticles: [],
   }),
   actions: {
     addUserCreatedArticles(fullArticle) {
@@ -43,7 +42,6 @@ export const useArticleStore = defineStore('articles', {
     if (storedUserCreatedArticles) {
       storedUserCreatedArticles = JSON.parse(storedUserCreatedArticles);
       console.log('userCreatedArticles loaded from local storage:', storedUserCreatedArticles);
-      this.userCreatedArticles = storedUserCreatedArticles;
     }
   }
 });

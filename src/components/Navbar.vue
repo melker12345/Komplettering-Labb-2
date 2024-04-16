@@ -1,35 +1,89 @@
 <template>
-    <nav
-        :class="{ 'fixed top-0 inset-x-0 transition-transform transform z-1 border-b dark:border-secondary': true, '-translate-y-full': !showNavbar, 'translate-y-0': showNavbar }" id="main-color">
-        <div class="max-w-full mx-0 sm:mx-16 px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+    <nav :class="{
+        'fixed top-0 inset-x-0 z-30 border-b bg-white dark:bg-black dark:border-secondary shadow-md transition-transform duration-300 ease-in-out': true,
+        '-translate-y-full': !showNavbar,
+        'translate-y-0': showNavbar
+    }" id="main-color">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
 
-                <div class="flex-shrink-0 hidden sm:block">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
                     <img class="h-8 w-8" src="/src/assets/vue.svg" alt="Logo">
                 </div>
 
-                <div class="flex items-center justify-center flex-1">
-                    <div class="ml-0 sm:ml-10 flex items-baseline space-x-4 overflow-hidden">
-                        <router-link to="/"
-                            class="text-surface dark:text-base font-bold py-2 px-1 sm:px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105  duration-100 ease-in-out">Home</router-link>
-                        <router-link to="/about"
-                            class="text-surface dark:text-base font-bold py-2 px-1 sm:px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-100 ease-in-out">About</router-link>
-                        <router-link to="/articles"
-                            class="text-surface dark:text-base font-bold py-2 px-1 sm:px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-100 ease-in-out">Articles</router-link>
-                    </div>
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <router-link to="/"
+                        class="text-gray-800 dark:text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:shadow-outline transition-transform hover:scale-105 duration-300 ease-in-out">
+                        Home
+                    </router-link>
+                    <router-link to="/about"
+                        class="text-gray-800 dark:text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:shadow-outline transition-transform hover:scale-105 duration-300 ease-in-out">
+                        About
+                    </router-link>
+                    <router-link to="/articles"
+                        class="text-gray-800 dark:text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:shadow-outline transition-transform hover:scale-105 duration-300 ease-in-out">
+                        Articles
+                    </router-link>
                 </div>
 
-                <button @click="toggleTheme"
-                    class="font-bold text-2xl dark:text-2xl py-2 px-4 rounded text-surface transform transition hover:scale-105 duration-100 ease-in-out">◑</button>
-                <button v-if="!authStore.isAuthenticated" @click="isModalVisible = true" class="font-bold text-lg py-2 px-1 sm:px-4 rounded text-surface transform transition hover:scale-105 duration-100 ease-in-out">Log in</button>
-                <button v-else @click="authStore.logout" class="font-bold text-lg py-2 px-1 sm:px-4 rounded text-surface transform transition hover:scale-105 duration-100 ease-in-out">Log out</button>
+                <!-- Theme Toggle and Authentication Buttons -->
+                <div class="flex items-center space-x-4">
+                    <button @click="toggleTheme"
+                        class="hidden sm:block font-bold text-xl py-2 px-4 rounded-lg text-gray-800 dark:text-white transform transition hover:scale-105 duration-300 ease-in-out">
+                        ◑
+                    </button>
+                    <button v-if="!authStore.isAuthenticated" @click="isModalVisible = true"
+                        class="font-bold text-lg py-2 px-4 rounded-lg text-gray-800 dark:text-white transform transition hover:scale-105 duration-300 ease-in-out">
+                        Log in
+                    </button>
+                    <button v-else @click="authStore.logout"
+                        class="font-bold text-lg py-2 px-4 rounded-lg text-gray-800 dark:text-white transform transition hover:scale-105 duration-300 ease-in-out">
+                        Log out
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button @click="toggleMobileMenu"
+                    class="md:hidden p-2 rounded-md text-gray-800 dark:text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </div>
         </div>
+
+        <!-- Mobile Menu -->
+        <div v-if="showMobileMenu" class="md:hidden flex items-center flex-col">
+            <router-link to="/"  class="block py-2 px-4 text-center text-gray-800 dark:text-white">
+                Home
+            </router-link>
+            <router-link to="/about" class="block py-2 px-4 text-center text-gray-800 dark:text-white">
+                About
+            </router-link>
+            <router-link to="/articles" class="block py-2 px-4 text-center text-gray-800 dark:text-white">
+                Articles
+            </router-link>
+            <button @click="toggleTheme" class="block py-2 px-4 text-center text-gray-800 dark:text-white">
+                Toggle Theme
+            </button>
+            <button v-if="!authStore.isAuthenticated" @click="isModalVisible = true"
+                class="block py-2 px-4 text-center text-gray-800 dark:text-white">
+                Log in
+            </button>
+            <button v-else @click="authStore.logout" class="block py-2 px-4 text-center text-gray-800 dark:text-white">
+                Log out
+            </button>
+        </div>
+
+        <!-- Modal for Login -->
     </nav>
-
     <LoginModal :isVisible="isModalVisible" @close="isModalVisible = false" />
-
 </template>
+
 
 <script>
 import { useThemeStore } from '../stores/ThemeStore';
@@ -44,7 +98,9 @@ export default {
         const themeStore = useThemeStore();
         const authStore = useAuthStore();
 
-        const showNavbar = ref(true);
+        // This ref tracks the visibility of the mobile navbar menu.
+        const showMobileMenu = ref(false);
+        const showNavbar = ref(true); // Controls navbar visibility based on scroll.
         const lastScrollPosition = ref(0);
         const isModalVisible = ref(false);
 
@@ -57,13 +113,20 @@ export default {
             isModalVisible.value = !isModalVisible.value;
         };
 
+        // Function to toggle mobile menu
+        const toggleMobileMenu = () => {
+            showMobileMenu.value = !showMobileMenu.value; 
+        };
+
         const handleScroll = () => {
-            const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
 
             if (currentScrollPosition < lastScrollPosition.value) {
                 showNavbar.value = true;
             } else if (currentScrollPosition > 100) {
                 showNavbar.value = false;
+                // Optionally hide the mobile menu when scrolling down
+                showMobileMenu.value = false;
             }
             lastScrollPosition.value = currentScrollPosition;
         };
@@ -76,7 +139,15 @@ export default {
             window.removeEventListener('scroll', handleScroll);
         });
 
-        return { showNavbar, isModalVisible, toggleLoginModal, authStore, toggleTheme };
+        return {
+            showNavbar,
+            showMobileMenu, // Make sure to return this to use in the template
+            isModalVisible,
+            toggleLoginModal,
+            authStore,
+            toggleTheme,
+            toggleMobileMenu, // Make sure to return this to use in the template
+        };
     },
 };
 </script>

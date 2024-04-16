@@ -1,8 +1,8 @@
 <template>
-    <div class="max-w-4xl min-h-[80vh] mx-auto  mt-[65px] p-10 flex justify-center items-center h-fit ">
-        <div class="p-10 my-40 shadow-md rounded-lg min-h-fit h-2/3 border-t border-b border-accent1 border-opacity-30"
+    <div class="max-w-4xl min-h-[80vh] mx-auto mt-[65px] p-0 sm:p-10 flex justify-center items-center h-fit ">
+        <div class="p-10 my-40 shadow-md rounded-lg min-h-fit h-2/3 border-t border-b border-accent2 border-opacity-30"
             id="main-color">
-            <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent1 border-opacity-30">How this site works</h1>
+            <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent2 border-opacity-30">How this site works</h1>
             <div>
                 <p>
                     This website is built with Vue 3, Tailwind, and Pinia. The 'articles' are fetched from a mock API or
