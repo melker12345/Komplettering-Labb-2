@@ -29,7 +29,7 @@ TODO:
 
  -->
 
- <template>
+<template>
     <div class="flex flex-col w-full items-center mt-16 mb-40 px-4 md:px-8 lg:px-16">
         <div class="flex flex-col md:flex-row w-full justify-around mt-8 md:mt-16">
             <h1 class="text-3xl md:text-4xl font-bold dark:text-dark-secondary text-center mb-4 md:mb-0">
@@ -44,7 +44,8 @@ TODO:
             <div class="rounded-md p-4 md:p-8" id="main-color">
                 <textarea v-model="markdownInput"
                     :placeholder="'# h1\n## h2\n**bold**\n*italic*\n- list\n[link](https://example.com)'"
-                    class="p-4 h-[50vh] md:h-[70vh] w-full overflow-auto resize-none border border-accent2 dark:bg-black dark:text-dark-secondary "></textarea>
+                    class="p-4 h-[50vh] md:h-[70vh] w-full overflow-auto resize-none border border-accent2 dark:bg-black dark:text-dark-secondary ">
+                </textarea>
             </div>
 
             <div class="p-4 md:p-8 rounded-md" id="main-color">
@@ -60,8 +61,8 @@ TODO:
             </button>
         </div>
 
-        <SubmitArticleModal :isVisible="isSubmitArticleModalVisible" @submit="handleArticleSubmission"
-            @close="toggleSubmitArticleModal" />
+        <SubmitArticleModal :isVisible="isSubmitArticleModalVisible" @close="toggleSubmitArticleModal"
+            @submit="handleArticleSubmission" />
     </div>
 
 </template>
@@ -74,7 +75,7 @@ import SubmitArticleModal from '../components/SubmitArticleModal.vue';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 
-
+// local storage and store articles are weird. :)
 
 export default {
     components: { SubmitArticleModal },
@@ -90,7 +91,7 @@ export default {
 
         marked.setOptions({
             renderer,
-            breaks: true, // Enable GFM line breaks
+            breaks: true,
         });
 
         const sanitizedHtml = computed(() => {
@@ -105,11 +106,10 @@ export default {
             const fullArticle = {
                 ...articleDetails,
                 body: markdownInput.value,
-                
-                
+
             };
             useArticleStore().addUserCreatedArticles(fullArticle);
-            isSubmitArticleModalVisible.value = false;
+            console.log(useArticleStore().userCreatedArticles);
         };
 
         const toggleSubmitArticleModal = () => {

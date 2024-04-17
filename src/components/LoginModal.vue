@@ -27,7 +27,8 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <button type="submit" class=" font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="button-color">Log In</button>
+                    <button type="submit" class=" font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        id="button-color">Log In</button>
                 </div>
 
             </form>
@@ -42,8 +43,8 @@ import { useAuthStore } from '../stores/AuthStore';
 export default {
     props: {
         isVisible: {
-          type: Boolean,
-          required: true,
+            type: Boolean,
+            required: true,
         },
     },
     emits: ['close'],

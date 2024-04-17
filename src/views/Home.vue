@@ -17,7 +17,7 @@
           <!-- Card 1 -->
           <div v-for="(article, index) in articles.slice(0, 2)" :key="index"
             class="rounded-2xl shadow-sm flex flex-col justify-between p-10 mb-20 border-t border-b border-accent2 border-opacity-30"
-            :class="{'w-full lg:max-w-[30vw]': !article.expanded, 'w-full lg:max-w-[60vw] z-10 relative mx-auto': article.expanded}"
+            :class="{ 'w-full lg:max-w-[30vw]': !article.expanded, 'w-full lg:max-w-[60vw] z-10 relative mx-auto': article.expanded }"
             id="main-color" @click="toggleExpand(article, index)">
             <h3 class="text-3xl font-bold mb-4 pb-8 text-center border-b border-accent2 border-opacity-30">
               {{ article.title }}
@@ -32,7 +32,7 @@
           <!-- Card 2 -->
           <div v-for="(article, index) in articles.slice(2, 4)" :key="index + 2"
             class="rounded-2xl shadow-sm flex flex-col justify-between p-10 mb-20 border-t border-b border-accent2 border-opacity-30"
-            :class="{'w-full lg:max-w-[30vw]': !article.expanded, 'w-full lg:max-w-[60vw] z-10 relative mx-auto': article.expanded}"
+            :class="{ 'w-full lg:max-w-[30vw]': !article.expanded, 'w-full lg:max-w-[60vw] z-10 relative mx-auto': article.expanded }"
             id="main-color" @click="toggleExpand(article, index + 2)">
             <h3 class="text-3xl font-bold mb-4 pb-8 text-center border-b border-accent2 border-opacity-30">
               {{ article.title }}
@@ -81,7 +81,8 @@
   <!-- Modal for expanded article -->
   <div v-if="expandedArticle" class="fixed inset-0 z-3 flex items-center justify-center p-4 bg-black bg-opacity-60  ">
     <div class="rounded-xl shadow-xl p-4 px-8 max-w-[50vw] w-full overflow-hidden h-[90vh] mt-10 " id="main-color">
-      <button @click="expandedArticle = !expandedArticle" onclick="document.body.style.overflow = '' " class="w-full flex justify-end mb-4 text-secondary dark:text-dark-secondary text-2xl">&times;</button>
+      <button @click="expandedArticle = !expandedArticle" onclick="document.body.style.overflow = '' "
+        class="w-full flex justify-end mb-4 text-secondary dark:text-dark-secondary text-2xl">&times;</button>
       <div class="overflow-y-auto max-h-[calc(90vh-100px)]" id="markdown-editor" v-html="expandedArticle.content"></div>
     </div>
   </div>
@@ -98,7 +99,7 @@ export default {
   setup() {
     const articles = ref([
       { id: 1, title: "Project Documentation", summary: "The document outlines a Vue 3 web application using TailwindCSS, Pinia, Marked, DOMPurify, and Axios, focusing on data management and styling. It details functionalities like article viewing, user-created content, and authentication, along with responsive design issues. Future enhancements and technical considerations include implementing article management features, enhancing type safety with TypeScript, and securing user sessions. The application demonstrates best practices in API data fetching and state management, showcasing modern web development techniques.", expanded: false, content: '', filePath: 'public/markdown/task.md' },
-      { id: 2, title: "Lorem Ipsum", summary: "The document outlines a Vue 3 web application using TailwindCSS, Pinia, Marked, DOMPurify, and Axios, focusing on data management and styling. It details functionalities like article viewing, user-created content, and authentication, along with responsive design issues. Future enhancements and technical considerations include implementing article management features, enhancing type safety with TypeScript, and securing user sessions. The application demonstrates best practices in API data fetching and state management, showcasing modern web development techniques", expanded: false, content: '', filePath: 'public/markdown/task.md' },
+      { id: 2, title: "Requirements for this project", summary: "This file goes through the requirements for this project and demonstrates how each requirements was forfilled", expanded: false, content: '', filePath: 'public/markdown/Requirements.md' },
       { id: 3, title: "Lorem Ipsum 2", summary: "The document outlines a Vue 3 web application using TailwindCSS, Pinia, Marked, DOMPurify, and Axios, focusing on data management and styling. It details functionalities like article viewing, user-created content, and authentication, along with responsive design issues. Future enhancements and technical considerations include implementing article management features, enhancing type safety with TypeScript, and securing user sessions. The application demonstrates best practices in API data fetching and state management, showcasing modern web development techniques", expanded: false, content: '', filePath: 'public/markdown/task.md' },
       { id: 4, title: "Cache Synchronization", summary: "Cache Synchronization is the process ", expanded: false, content: '', filePath: 'public/markdown/Cache_Synchronization.md' }
     ]);

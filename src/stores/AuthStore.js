@@ -1,6 +1,6 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-export const useAuthStore = defineStore("auth", {
+export const useAuthStore = defineStore('auth', {
   state: () => ({
     isAuthenticated: false,
   }),
@@ -10,10 +10,10 @@ export const useAuthStore = defineStore("auth", {
     // This is just a simple example to demonstrate how to use actions in Pinia :)
 
     login(username, password) {
-      if (username === "John" && password === "123") {
+      if (username === 'John' && password === '123') {
         this.isAuthenticated = true;
       } else {
-        throw new Error("Invalid credentials");
+        throw new Error('Invalid credentials');
       }
     },
     logout() {

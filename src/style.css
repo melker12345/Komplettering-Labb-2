@@ -126,13 +126,14 @@ body {
 #markdown-editor code {
     border-radius: 0.3rem;
     padding: 0.15rem;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #0000000b;
 
 }
 
 #markdown-editor pre {
-    background-color: #0099ff;
+    background-color: #4d4d4d5d;
     padding: 1rem;
+    margin-top: 1rem;
     border-radius: 0.25rem;
     overflow-x: auto;
 }

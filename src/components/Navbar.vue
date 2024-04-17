@@ -58,7 +58,7 @@
 
         <!-- Mobile Menu -->
         <div v-if="showMobileMenu" class="md:hidden flex items-center flex-col">
-            <router-link to="/"  class="block py-2 px-4 text-center text-gray-800 dark:text-white">
+            <router-link to="/" class="block py-2 px-4 text-center text-gray-800 dark:text-white">
                 Home
             </router-link>
             <router-link to="/about" class="block py-2 px-4 text-center text-gray-800 dark:text-white">
@@ -115,7 +115,7 @@ export default {
 
         // Function to toggle mobile menu
         const toggleMobileMenu = () => {
-            showMobileMenu.value = !showMobileMenu.value; 
+            showMobileMenu.value = !showMobileMenu.value;
         };
 
         const handleScroll = () => {

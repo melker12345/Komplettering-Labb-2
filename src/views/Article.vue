@@ -4,8 +4,7 @@
   </div>
 
   <div class=" flex items-center justify-center" v-if="authStore.isAuthenticated">
-    <router-link to="/create"  class="px-4 py-2 rounded-md mx-auto"
-      id="button-color">Create</router-link>
+    <router-link to="/create" class="px-4 py-2 rounded-md mx-auto" id="button-color">Create</router-link>
   </div>
 
   <!-- articles from loacal storage  -->

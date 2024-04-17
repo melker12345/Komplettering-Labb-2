@@ -19,14 +19,15 @@
                         class="my-2 mx-1 p-2 justify-center w-[95%] rounded-md shadow-sm bg-primary dark:bg-black dark:bg-opacity-50 ">
                     </textarea>
                 </div>
-                
+
                 <div v-if="showError" class="text-red-500 my-2 font-semibold text-center">
                     Please fill in both the title
                     and summary fields.
                 </div>
 
                 <div class="flex justify-center">
-                    <button type="submit" class=" font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="button-color">Submit</button>
+                    <button type="submit" class=" font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        id="button-color">Submit</button>
                 </div>
             </form>
         </div>
@@ -40,8 +41,8 @@ import { ref } from 'vue';
 export default {
     props: {
         isVisible: {
-          type: Boolean,
-          required: true,
+            type: Boolean,
+            required: true,
         },
     },
     emits: ['submit', 'close'],
@@ -54,9 +55,11 @@ export default {
             if (title.value.trim() === '' || summary.value.trim() === '') {
                 showError.value = true;
                 return;
+            } else {
+                emit('submit', { title: title.value, summary: summary.value });
+                emit('close');
+
             }
-            emit('submit', { title: title.value, summary: summary.value });
-            emit('close');
 
             title.value = '';
             summary.value = '';
