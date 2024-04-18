@@ -113,7 +113,7 @@ Följande krav måste uppfyllas för att nå grundnivån:
 
 11. **Källkodshantering**
     - Publicera projektets källkod på GitHub.
-    - Länk till GitHub-repositoriet: [github](https://github.com/melker12345/vue-articles)
+    - Länk till GitHub-repositoriet: [github](https://github.com/melker12345/Komplettering-Labb-2)
 
 ## Tilläggskrav för Betyget VG
 
