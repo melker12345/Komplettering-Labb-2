@@ -1,9 +1,11 @@
 <template>
-    <div class="max-w-4xl min-h-[80vh] mx-auto mt-[65px] p-0 sm:p-10 flex justify-center items-center  ">
+    <div class="max-w-4xl min-h-[80vh] mx-auto mt-[65px] p-0 sm:p-10 flex justify-center items-center">
         <div v-if="article"
             class="p-10 my-40 shadow-md rounded-lg min-h-[70vh] min-w-[30vw] border-t border-b border-accent2 border-opacity-30"
             id="main-color">
-            <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent2 border-opacity-30">{{ article.title }}</h1>
+            <h1 class="text-4xl font-bold mb-8 pb-8 border-b border-accent2 border-opacity-30">
+                {{ article.title }}
+            </h1>
             <div v-html="sanitizedHtml" id="markdown-editor"></div>
         </div>
         <div v-else
@@ -44,8 +46,8 @@ export default {
             if (article.value) {
                 const rawHtml = marked(article.value.body);
                 return DOMPurify.sanitize(rawHtml, {
-                    ADD_TAGS: ["img"],
-                    ADD_ATTR: ["src", "href"],
+                    ADD_TAGS: ['img'],
+                    ADD_ATTR: ['src', 'href'],
                 });
             }
             return '';
@@ -62,7 +64,7 @@ export default {
 
         return {
             article,
-            sanitizedHtml
+            sanitizedHtml,
         };
     },
 };

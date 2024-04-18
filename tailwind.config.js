@@ -1,5 +1,3 @@
-import { fontFamily } from 'tailwindcss/defaultTheme';
-
 module.exports = {
   content: ['./index.html', './src/**/*.{js,vue}'],
   darkMode: 'class',

@@ -63,6 +63,7 @@ These two features are just a few of the new features in Vue 3. I did not use th
 
 - **Article Management**
   - Implement sorting, searching, and pagination for articles would be a nice touch but it's not necessary for the project.
+  - Add a delete button for each article if the user is logged in.  
 
 - **Visual Enhancements**
   - Consider adding a parallax effect to the background.
@@ -88,3 +89,4 @@ These two features are just a few of the new features in Vue 3. I did not use th
 
 - **Security**
   - Enhance security by handling login/logout functionality server-side, and manage unauthorized access more effectively.
+ 
