@@ -50,7 +50,8 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                            d="M4 6h16M4 12h16m-7 6h7">
+                        </path>
                     </svg>
                 </button>
             </div>
@@ -78,10 +79,10 @@
                 Log out
             </button>
         </div>
-
-        <!-- Modal for Login -->
     </nav>
+    <!-- Modal for Login -->
     <LoginModal :isVisible="isModalVisible" @close="isModalVisible = false" />
+
 </template>
 
 
@@ -118,6 +119,7 @@ export default {
             showMobileMenu.value = !showMobileMenu.value;
         };
 
+        // Function to handle scroll event to hide the navbar on scroll down
         const handleScroll = () => {
             const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
 
@@ -125,28 +127,27 @@ export default {
                 showNavbar.value = true;
             } else if (currentScrollPosition > 100) {
                 showNavbar.value = false;
-                // Optionally hide the mobile menu when scrolling down
                 showMobileMenu.value = false;
             }
             lastScrollPosition.value = currentScrollPosition;
         };
-
+        // on component mounted add event listener for scroll
         onMounted(() => {
             window.addEventListener('scroll', handleScroll);
         });
-
+        // on component unmounted remove event listener for scroll
         onBeforeUnmount(() => {
             window.removeEventListener('scroll', handleScroll);
         });
 
         return {
             showNavbar,
-            showMobileMenu, // Make sure to return this to use in the template
+            showMobileMenu,
             isModalVisible,
             toggleLoginModal,
             authStore,
             toggleTheme,
-            toggleMobileMenu, // Make sure to return this to use in the template
+            toggleMobileMenu,
         };
     },
 };

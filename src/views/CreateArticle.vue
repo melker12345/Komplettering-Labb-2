@@ -1,36 +1,7 @@
-<!-- 
-ignore all TODOs that are marked [DONE]
-
-TODO:
-
-- Create a new article post. should be a button in the article view. [DONE]
-    - Once the user have writen an aritcle and presses the submit button, the user should be prompted to enter a title and a summary. [DONE] 
-    - The header should be userCreatedArticles.title [DONE]
-    - The summary should be userCreatedArticles.summary [DONE]
-    - To not have user-created articles removed by page relod lets store it in local storage as well. [DONE]
-    
-    --- 
-
-    - The article should be added to the store userCreatedArticles.body. 
-        - How should i add the markdownInput to the store? 
-            - i want to preserv the structure of the markdownInput in the userCreatedArticles.body.
-
-    - The id should be userCreatedArticles.id and it should correspond to the index of the article in the store.
-    - Currently the userCreatedArticles is structured like this [{"title":"test1","summary":"test1"},{"title":"test2","summary":"test2"}....]
-    - Where test1 and test2 are examples user added articles from the SubmitArticleModal.vue component. 
-    - the body or the markdownInput should be added to the userCreatedArticles.body.
-    - so one article object looks like this {"id":1, "title":"test1","summary":"test1","body":"# test1\n\nThis is a test1 article. that should represent the markdownInput from the CreateArticle.vue component."}
-    - The body should be the markdownInput from the CreateArticle.vue component.
-    - The markdownInput should be added to the userCreatedArticles.body. and preserv the structure of the markdownInput. 
-
-    - So the title and summary is added from the SubmitArticleModal.vue component and the body and id is added from the CreateArticle.vue component but they should be one object.
-        
-
-
- -->
-
 <template>
+    <!-- container div -->
     <div class="flex flex-col w-full items-center mt-16 mb-40 px-4 md:px-8 lg:px-16">
+        <!-- container for the markdown editor and preview headers -->
         <div class="flex flex-col md:flex-row w-full justify-around mt-8 md:mt-16">
             <h1 class="text-3xl md:text-4xl font-bold dark:text-dark-secondary text-center mb-4 md:mb-0">
                 Markdown Editor
@@ -40,27 +11,30 @@ TODO:
             </h1>
         </div>
 
+        <!-- container for the markdown editor and preview -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full m-4 p-4 md:p-8">
+            <!-- markdown editor -->
             <div class="rounded-md p-4 md:p-8" id="main-color">
                 <textarea v-model="markdownInput"
                     :placeholder="'# h1\n## h2\n**bold**\n*italic*\n- list\n[link](https://example.com)'"
                     class="p-4 h-[50vh] md:h-[70vh] w-full overflow-auto resize-none border border-accent2 dark:bg-black dark:text-dark-secondary ">
                 </textarea>
             </div>
-
+            <!-- Markdown preview using v-html to just update the DOM for just that div -->
             <div class="p-4 md:p-8 rounded-md" id="main-color">
                 <div v-html="sanitizedHtml"
                     class="p-4 h-[50vh] md:h-[70vh] w-full overflow-auto border border-accent2 bg-white dark:bg-black dark:text-dark-secondary"
                     id="markdown-editor"></div>
             </div>
         </div>
+        <!-- Buttin to submit the markdown content -->
         <div class="w-full flex justify-center items-center">
             <button type="submit" @click="isSubmitArticleModalVisible = true"
                 class="my-4 font-bold py-2 px-4 rounded bg-blue-500 text-white hover:bg-blue-600" id="button-color">
                 Submit
             </button>
         </div>
-
+        <!-- Submit article modal -->
         <SubmitArticleModal :isVisible="isSubmitArticleModalVisible" @close="toggleSubmitArticleModal"
             @submit="handleArticleSubmission" />
     </div>
@@ -76,6 +50,7 @@ import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 
 // local storage and store articles are weird. :)
+// there was something of hence the usage of local storage
 
 export default {
     components: { SubmitArticleModal },
@@ -94,14 +69,15 @@ export default {
             breaks: true,
         });
 
+        // Here we make use of marked and DOMPurify. the marked library is used to convert markdown to html, and the DomOurify.sanitizedHTML is ther eto prevent XSS atempts (Cross-Site Scripting). 
+        // XSS is a type of security vulnerability that can be used to inject malicious scripts into web pages viewed by other users. 
         const sanitizedHtml = computed(() => {
             const rawHtml = marked(markdownInput.value);
-            return DOMPurify.sanitize(rawHtml, {
-                ADD_TAGS: ["img"], // Specify any tags you wish to allow that DOMPurify might not by default
-                ADD_ATTR: ["src", "href"], // Specify any attributes you wish to allow
-            });
+            return DOMPurify.sanitize(rawHtml);
         });
 
+        // Here we handle the submission of the article and pass it to addUserCreatedArticles in the article store.
+        // by combining the article details and the markdown input, we get the full article.
         const handleArticleSubmission = (articleDetails) => {
             const fullArticle = {
                 ...articleDetails,
@@ -109,9 +85,8 @@ export default {
 
             };
             useArticleStore().addUserCreatedArticles(fullArticle);
-            console.log(useArticleStore().userCreatedArticles);
         };
-
+        // a simple toggle function to keep track of the modal visibility
         const toggleSubmitArticleModal = () => {
             isSubmitArticleModalVisible.value = !isSubmitArticleModalVisible.value;
         };

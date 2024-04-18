@@ -6,6 +6,7 @@
                     <a href="#">
                         <img src="../assets/vue.svg" alt="">
                     </a>
+                    <!-- text links -->
                     <ul class="flex items-center gap-6 flex-wrap text-secondary dark:text-primary">
                         <li class=" hover:text-opacity-70 transition duration-200"><a href="#">Platform</a>
                         </li>
@@ -17,8 +18,9 @@
                         </li>
                         <li class=" hover:text-opacity-70 transition duration-200"><a href="#">FAQs</a></li>
                     </ul>
+                    <!-- icons -->
                     <div class="flex items-center gap-6 flex-wrap">
-                        <a class="text-secondary dark:text-primary  hover:text-gray-200 transition duration-200"
+                        <a class="text-secondary dark:text-primary  hover:text-accent2 dark:hover:text-accent2 transition duration-200"
                             href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"
                                 fill="none">
@@ -27,7 +29,7 @@
                                     fill="currentColor"></path>
                             </svg>
                         </a>
-                        <a class="text-secondary dark:text-primary hover:text-gray-200 transition duration-200"
+                        <a class="text-secondary dark:text-primary hover:text-accent2 dark:hover:text-accent2 transition duration-200"
                             href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"
                                 fill="none">
@@ -36,7 +38,7 @@
                                     fill="currentColor"></path>
                             </svg>
                         </a>
-                        <a class=" text-secondary dark:text-primary hover:text-gray-200 transition duration-200"
+                        <a class=" text-secondary dark:text-primary hover:text-accent2 dark:hover:text-accent2 transition duration-200"
                             href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"
                                 fill="none">
@@ -50,7 +52,7 @@
             </div>
         </div>
         <div class="py-12">
-            <p class="text-center text-sm text-muted">Made by Melker Öberg © 2024. All rights reserved.</p>
+            <p class="text-center text-sm text-muted">Made by Melker Öberg 2024.</p>
         </div>
     </section>
 </template>

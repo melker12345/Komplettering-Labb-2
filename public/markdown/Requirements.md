@@ -19,7 +19,7 @@ Följande krav måste uppfyllas för att nå grundnivån:
 2. **Textinterpolering**
 
    - Använd `{{ och }}` för att interpolera text i Vue-komponenter.
-   - Exempel från `Article.vue`:
+   - Exempel från `Article.vue` där jag viser artikel titel och sammanfattning och gör första bokstaven av titeln stor:
      ```html
      <div>
        {{ article.title.charAt(0).toUpperCase() + article.summary.slice(1) }}

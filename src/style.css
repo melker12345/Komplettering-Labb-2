@@ -32,19 +32,19 @@
     padding: 0;
 }
 
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: BlinkMacSystemFont, Inter, sans-serif;
     @apply bg-backgroundImage dark:bg-darkBackgroundImage
-}
-
-
-#button-color{
-    @apply bg-accent1 text-white hover:bg-accent2
 }
 
 #app {
     @apply flex flex-col min-h-screen w-full;
+}
+
+
+/* ===== This is just custom ids so i don't have to write the colors often ===== */
+#button-color{
+    @apply bg-accent1 text-white hover:bg-accent2
 }
 
 #main-color {
@@ -58,7 +58,7 @@ body {
 
 
 
-/* ===== Markdown ===== */
+/* ===== Markdown styles is GPT generated with some tweaks to make it fit my preference ===== */
 
 #markdown-editor h1 {
     font-size: 2.25rem;

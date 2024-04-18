@@ -10,11 +10,11 @@ I also want to mention that I started this documentation after I had already sta
 
 ### The Goal
 
-The goal is to create a simple application that meets the requirements of the assignment. Therefore, the project is structured in a way to fulfill all the requirements as the primary goal instead of focusing on creating a well-structured and scalable application that's actually usable. :)
+The goal is to create a simple application that meets the requirements of the assignment. Therefore, the project is structured in a way to fulfill all the requirements as the primary goal instead of focusing on creating a well-functional and scalable application that's actually usable. :)
 
-Since I've started reading articles and blog posts about software development, I decided to create an article application. The main goal is simple: let the user write markdown and display the markdown preview, while also fetching articles from an API and displaying them.
+Since I've started reading articles and blog posts about software development and techniques, I decided to create an article application. The main goal is simple: let the user write markdown and display the markdown preview (wich i refer to as 'article'), while also fetching articles from an API and displaying them.
 
-The extra features are just that, extra features that I added to make the project more interesting and to learn more about Vue 3 and TailwindCSS. For instance, the authentication feature, which is horribly implemented—the authentication is not secure at all. But it was a fun feature to implement, and shows how the frontend could look like if a viable authentication functionality was present. To create a working authentication system would require a backend server to handle the authentication, alternatively a third-party service like Google or GitHub. The authentication should **NOT** solely be handled on the frontend.
+The extra features are just that, extra features that I added to make the project more interesting and to learn more about Vue 3 and TailwindCSS and also markdown syntax. For instance, the authentication feature, is horribly implemented, the authentication is **not secure** at all. But it was a fun feature to implement, and shows how the frontend could look like if a viable authentication functionality was present. To create a working authentication system it would require a backend server to handle the authentication, alternatively a third-party service like Google or GitHub. The authentication should **NOT** solely be handled on the frontend.
 
 ---
 
