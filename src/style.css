@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 
 /* ===== Scrollbar CSS ===== */
@@ -32,6 +32,7 @@
     padding: 0;
 }
 
+/* The 'Unknown at rule @apply' warning i think is because some black macig that does not make sence to me but it might be local to my VScode *hopefullly* :) */
 body {
     font-family: BlinkMacSystemFont, Inter, sans-serif;
     @apply bg-backgroundImage dark:bg-darkBackgroundImage
@@ -54,8 +55,6 @@ body {
 #secondary-color {
     @apply bg-secondary text-primary dark:bg-dark-secondary dark:text-dark-primary
 }
-
-
 
 
 /* ===== Markdown styles is GPT generated with some tweaks to make it fit my preference ===== */
